@@ -15,7 +15,7 @@ The package can be installed as:
 
 ```elixir
 def deps do
-  [{:pickle, "~> 0.3.6", only: :test, github: "Mathison-Inc/pickle"}]
+  [{:pickle, "~> 0.5.1", only: :test, github: "Mathison-Inc/pickle", ref: "v0.5.1"}]
 end
 ```
 
