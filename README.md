@@ -2,7 +2,7 @@
 
 This project was forked from [Cabbage](https://github.com/cabbage-ex/cabbage) to try and do very little maintenaince for internal use.
 
-<img src="https://www.organicfacts.net/wp-content/uploads/2013/12/redcabbage.jpg" width="240px" height="180px"></img>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpb_92f0kKiUeokWg5SCp79eazxY7ztzPVSTfCaDhApyHUeBkBJ0uxTXT2PPavy6nnRLk&usqp=CAU" width="240px" height="180px"></img>
 ##### (Looking contribution for a better icon!)
 
 A simple addon on top of [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html) which provides compile time translation of `.feature` files to exunit tests. Big thanks to [@meadsteve](https://github.com/meadsteve) and the [White Bread](https://github.com/meadsteve/white-bread) project for a huge head start on this project.
