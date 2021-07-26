@@ -1,4 +1,4 @@
-defmodule Cabbage.Feature.Parameter do
+defmodule Pickle.Feature.Parameter do
   @moduledoc false
   # Functions for extracting parameters out of a cucumber expressions and converting
   # those to regular expressions. A parameter is in the form of "{capture_name:type}".
@@ -6,7 +6,7 @@ defmodule Cabbage.Feature.Parameter do
 
   defstruct [:type_regex, :capture_name]
 
-  alias Cabbage.Feature.ParameterType
+  alias Pickle.Feature.ParameterType
 
   @type t :: %__MODULE__{}
 

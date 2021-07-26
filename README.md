@@ -1,9 +1,6 @@
-# Cabbage
+# Pickle
 
-[![Coverage Status](https://coveralls.io/repos/github/cabbage-ex/cabbage/badge.svg?branch=master)](https://coveralls.io/github/cabbage-ex/cabbage?branch=master)
-[![CircleCI](https://circleci.com/gh/cabbage-ex/cabbage.svg?style=svg)](https://circleci.com/gh/cabbage-ex/cabbage)
-[![Build Status](https://semaphoreci.com/api/v1/cabbage-ex/cabbage/branches/master/shields_badge.svg)](https://semaphoreci.com/cabbage-ex/cabbage)
-[![Hex.pm](https://img.shields.io/hexpm/v/cabbage.svg)]()
+This project was forked from [Cabbage](https://github.com/cabbage-ex/cabbage) to try and do very little maintenaince for internal use.
 
 <img src="https://www.organicfacts.net/wp-content/uploads/2013/12/redcabbage.jpg" width="240px" height="180px"></img>
 ##### (Looking contribution for a better icon!)
@@ -12,13 +9,13 @@ A simple addon on top of [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html) which 
 
 ## Installation
 
-[Available in Hex](https://hex.pm/packages/cabbage), the package can be installed as:
+The package can be installed as:
 
-  1. Add `cabbage` to your list of dependencies in `mix.exs`:
+  1. Add `pickle` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:cabbage, "~> 0.3.0"}]
+  [{:pickle, "~> 0.3.6", only: :test, github: "Mathison-Inc/pickle"}]
 end
 ```
 
@@ -27,7 +24,7 @@ end
 By default, feature files are expected inside `test/features`. This can be configured within your application with the following:
 
 ```elixir
-config :cabbage, features: "some/other/path/from/your/project/root"
+config :pickle, features: "some/other/path/from/your/project/root"
 ```
 
 Inside `test/features/coffee.feature` you might have something like:
@@ -50,7 +47,7 @@ To translate this to a simple exunit test, all you need to do is provide the tra
 ```elixir
 defmodule MyApp.Features.CoffeeTest do
   # Options, other than file:, are passed directly to `ExUnit`
-  use Cabbage.Feature, async: false, file: "coffee.feature"
+  use Pickle.Feature, async: false, file: "coffee.feature"
 
   # `setup_all/1` provides a callback for doing something before the entire suite runs
   # As below, `setup/1` provides means of doing something prior to each scenario
@@ -149,7 +146,7 @@ $ docker-compose run --rm test deps.update --all
 Or, if you want to run a single test, that can be accomplished with:
 
 ```shell
-$ docker-compose run --rm cabbage test test/feature_test.exs
+$ docker-compose run --rm pickle test test/feature_test.exs
 ```
 
 # Roadmap
@@ -161,5 +158,3 @@ $ docker-compose run --rm cabbage test test/feature_test.exs
 - [x] Executing specific tests
 - [x] Tags implementation
 - [ ] Background steps
-- [ ] Integration Helpers for Wallaby (separate project?)
-- [ ] Integration Helpers for Hound (separate project?)

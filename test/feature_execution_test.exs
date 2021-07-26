@@ -1,12 +1,12 @@
 Code.require_file("test_helper.exs", __DIR__)
 
-defmodule Cabbage.FeatureExecutionTest do
+defmodule Pickle.FeatureExecutionTest do
   use ExUnit.Case
 
   describe "Tests execution" do
     test "ignores steps that doesn't comply to pattern {:ok, map}" do
       defmodule FeatureExecutionTest do
-        use Cabbage.Feature, file: "simple.feature"
+        use Pickle.Feature, file: "simple.feature"
 
         setup do
           {:ok, %{state: [:initial]}}
@@ -31,27 +31,27 @@ defmodule Cabbage.FeatureExecutionTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
 
     test "error on returning {:ok, not a map}" do
       defmodule FeatureExecutionTest2 do
-        use Cabbage.Feature, file: "simplest.feature"
+        use Pickle.Feature, file: "simplest.feature"
 
         defthen ~r/^I provide Then$/, _vars, _state do
           {:ok, [some: :some]}
         end
       end
 
-      {result, output} = CabbageTestHelper.run()
+      {result, output} = PickleTestHelper.run()
       assert result == %{failures: 1, skipped: 0, total: 1, excluded: 0}
       assert output =~ "** (BadMapError) expected a map, got: [some: :some]"
     end
 
     test "accepts state steps that does comply to pattern {:ok, map}" do
       defmodule FeatureExecutionTest3 do
-        use Cabbage.Feature, file: "simple.feature"
+        use Pickle.Feature, file: "simple.feature"
 
         setup do
           {:ok, %{state: [:initial]}}
@@ -77,7 +77,7 @@ defmodule Cabbage.FeatureExecutionTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
   end
@@ -85,7 +85,7 @@ defmodule Cabbage.FeatureExecutionTest do
   describe "Tests contains dynamic and outlined data" do
     test "dynamic patternmatched data are passed to steps" do
       defmodule FeatureExecutionTest4 do
-        use Cabbage.Feature, file: "dynamic.feature"
+        use Pickle.Feature, file: "dynamic.feature"
 
         defgiven ~r/^I provide Given with \'(?<string_1>[^\']+)\' part$/, %{string_1: string_1}, _state do
           assert string_1 == "given dynamic"
@@ -120,13 +120,13 @@ defmodule Cabbage.FeatureExecutionTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
 
     test "outlined data are passed to steps" do
       defmodule FeatureExecutionTest5 do
-        use Cabbage.Feature, file: "outline.feature"
+        use Pickle.Feature, file: "outline.feature"
 
         setup do
           datatable = %{
@@ -185,7 +185,7 @@ defmodule Cabbage.FeatureExecutionTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 6, excluded: 0}
     end
   end

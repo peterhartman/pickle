@@ -1,9 +1,9 @@
 Code.require_file("test_helper.exs", __DIR__)
 
-defmodule Cabbage.FeatureSuggestionTest do
+defmodule Pickle.FeatureSuggestionTest do
   use ExUnit.Case
 
-  alias Cabbage.Feature.MissingStepError
+  alias Pickle.Feature.MissingStepError
 
   describe "provide simple missing steps" do
     test "Show missing Given step" do
@@ -18,7 +18,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
       assert_raise MissingStepError, message, fn ->
         defmodule FeatureSuggestionTest do
-          use Cabbage.Feature, file: "simple.feature"
+          use Pickle.Feature, file: "simple.feature"
         end
       end
     end
@@ -35,7 +35,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
       assert_raise MissingStepError, message, fn ->
         defmodule FeatureSuggestionTest2 do
-          use Cabbage.Feature, file: "simple.feature"
+          use Pickle.Feature, file: "simple.feature"
 
           defgiven ~r/^I provide Given$/, _vars, _state do
             # Your implementation here
@@ -56,7 +56,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
       assert_raise MissingStepError, message, fn ->
         defmodule FeatureSuggestionTest3 do
-          use Cabbage.Feature, file: "simple.feature"
+          use Pickle.Feature, file: "simple.feature"
 
           defgiven ~r/^I provide Given$/, _vars, _state do
             # Your implementation here
@@ -81,7 +81,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
       assert_raise MissingStepError, message, fn ->
         defmodule FeatureSuggestionTest4 do
-          use Cabbage.Feature, file: "simple.feature"
+          use Pickle.Feature, file: "simple.feature"
 
           defgiven ~r/^I provide Given$/, _vars, _state do
             # Your implementation here
@@ -100,7 +100,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
     test "Doesnt suggest any features" do
       defmodule FeatureSuggestionTest5 do
-        use Cabbage.Feature, file: "simple.feature"
+        use Pickle.Feature, file: "simple.feature"
 
         defgiven ~r/^I provide Given$/, _vars, _state do
           # Your implementation here
@@ -119,7 +119,7 @@ defmodule Cabbage.FeatureSuggestionTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
   end
@@ -137,7 +137,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
       assert_raise MissingStepError, message, fn ->
         defmodule FeatureSuggestionTest6 do
-          use Cabbage.Feature, file: "dynamic.feature"
+          use Pickle.Feature, file: "dynamic.feature"
         end
       end
     end
@@ -154,7 +154,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
       assert_raise MissingStepError, message, fn ->
         defmodule FeatureSuggestionTest7 do
-          use Cabbage.Feature, file: "dynamic.feature"
+          use Pickle.Feature, file: "dynamic.feature"
 
           defgiven ~r/^I provide Given with \'(?<string_1>[^\']+)\' part$/, %{string_1: _string_1}, _state do
             # Your implementation here
@@ -175,7 +175,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
       assert_raise MissingStepError, message, fn ->
         defmodule FeatureSuggestionTest8 do
-          use Cabbage.Feature, file: "dynamic.feature"
+          use Pickle.Feature, file: "dynamic.feature"
 
           defgiven ~r/^I provide Given with \'(?<string_1>[^\']+)\' part$/, %{string_1: string_1}, state do
             # Your implementation here
@@ -202,7 +202,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
       assert_raise MissingStepError, message, fn ->
         defmodule FeatureSuggestionTest9 do
-          use Cabbage.Feature, file: "dynamic.feature"
+          use Pickle.Feature, file: "dynamic.feature"
 
           defgiven ~r/^I provide Given with \'(?<string_1>[^\']+)\' part$/, %{string_1: _string_1}, _state do
             # Your implementation here
@@ -225,7 +225,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
     test "Do not show suggested items if all present" do
       defmodule FeatureSuggestionTest10 do
-        use Cabbage.Feature, file: "dynamic.feature"
+        use Pickle.Feature, file: "dynamic.feature"
 
         defgiven ~r/^I provide Given with \'(?<string_1>[^\']+)\' part$/, %{string_1: _string_1}, _state do
           # Your implementation here
@@ -250,7 +250,7 @@ defmodule Cabbage.FeatureSuggestionTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
   end
@@ -271,7 +271,7 @@ defmodule Cabbage.FeatureSuggestionTest do
 
       assert_raise MissingStepError, message, fn ->
         defmodule FeatureSuggestionTest11 do
-          use Cabbage.Feature, file: "outline.feature"
+          use Pickle.Feature, file: "outline.feature"
         end
       end
     end

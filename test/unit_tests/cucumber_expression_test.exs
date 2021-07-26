@@ -1,6 +1,6 @@
-defmodule Cabbage.Feature.CucumberExpressionTest do
+defmodule Pickle.Feature.CucumberExpressionTest do
   use ExUnit.Case, async: true
-  alias Cabbage.Feature.CucumberExpression
+  alias Pickle.Feature.CucumberExpression
 
   describe "converting cucumber expressions to regex" do
     test "convert simple string" do

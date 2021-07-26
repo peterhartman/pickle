@@ -1,10 +1,10 @@
-defmodule Cabbage.Feature.CucumberExpression do
+defmodule Pickle.Feature.CucumberExpression do
   @moduledoc false
   # Module which provides functionality to turn cucumber expression into valid regular expressions.
   # In your step definition you can use Cucumber Expressions as follows:
   # Supported types are `int`, `float`, `word`, `string`.
 
-  alias Cabbage.Feature.Parameter
+  alias Pickle.Feature.Parameter
 
   @spec to_regex_string(String.t()) :: String.t()
   def to_regex_string(expression) do

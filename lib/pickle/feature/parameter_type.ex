@@ -1,4 +1,4 @@
-defmodule Cabbage.Feature.ParameterType do
+defmodule Pickle.Feature.ParameterType do
   @moduledoc false
   # Function to provide the regular expression that maps to a type used in a Cucumber expression.
   # For instance, in the cucumber expression `Given I have {count:int} rows`, the parameter

@@ -1,4 +1,4 @@
-defmodule Cabbage.Feature.Helpers do
+defmodule Pickle.Feature.Helpers do
   @moduledoc false
   require Logger
 
@@ -10,7 +10,7 @@ defmodule Cabbage.Feature.Helpers do
   end
 
   defp to_regex_ast(term) when is_binary(term) do
-    regex_string = Cabbage.Feature.CucumberExpression.to_regex_string(term)
+    regex_string = Pickle.Feature.CucumberExpression.to_regex_string(term)
     Code.string_to_quoted!("~r/#{regex_string}/")
   end
 
@@ -47,7 +47,7 @@ defmodule Cabbage.Feature.Helpers do
   end
 
   def agent_name(scenario_name, module_name) do
-    :"cabbage_integration_test-#{scenario_name}-#{module_name}"
+    :"pickle_integration_test-#{scenario_name}-#{module_name}"
   end
 
   @keys ~w(async case describe file integration line test type scenario case_templae registered)a
@@ -84,7 +84,7 @@ defmodule Cabbage.Feature.Helpers do
 
     case Enum.find(tags, &match?({^string_tag, _}, &1)) do
       {^string_tag, block} ->
-        Logger.debug("Cabbage: Running tag @#{tag}...")
+        Logger.debug("Pickle: Running tag @#{tag}...")
         state = evaluate_tag_block(block)
         start_state(scenario_name, module, state)
 

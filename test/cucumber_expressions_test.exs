@@ -1,7 +1,7 @@
 Code.require_file("test_helper.exs", __DIR__)
 
-defmodule Cabbage.CucumberExpressionsTest do
-  use Cabbage.Feature, file: "cucumber_expressions.feature"
+defmodule Pickle.CucumberExpressionsTest do
+  use Pickle.Feature, file: "cucumber_expressions.feature"
   alias Gherkin.Elements.Scenario
 
   test "has a @feature" do

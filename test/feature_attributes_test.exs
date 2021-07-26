@@ -1,17 +1,17 @@
 Code.require_file("test_helper.exs", __DIR__)
 
-defmodule Cabbage.FeatureAttributesTest do
+defmodule Pickle.FeatureAttributesTest do
   @moduledoc """
   TODO: Is this test even necessary?
   It seems to test Gherkin library, not this one.
-  Inspired by Cabbage.FeatureTest
+  Inspired by Pickle.FeatureTest
   """
   use ExUnit.Case
 
   describe "Feature has correct attributes" do
     test "simple feature contains correct attributes" do
       defmodule FeatureAttributeTest do
-        use Cabbage.Feature, file: "simplest.feature"
+        use Pickle.Feature, file: "simplest.feature"
         alias Gherkin.Elements.Scenario
 
         test "has a @feature" do
@@ -26,13 +26,13 @@ defmodule Cabbage.FeatureAttributesTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 2, excluded: 0}
     end
 
     test "outlined feature contains correct attributes" do
       defmodule FeatureAttributeTest2 do
-        use Cabbage.Feature, file: "outline.feature"
+        use Pickle.Feature, file: "outline.feature"
         alias Gherkin.Elements.Scenario
 
         test "has a @feature" do
@@ -86,7 +86,7 @@ defmodule Cabbage.FeatureAttributesTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 7, excluded: 0}
     end
   end
