@@ -24,7 +24,7 @@ defmodule Pickle.FeatureTestTest do
       end
     end
 
-    {result, _output} = PickeTestHelper.run()
+    {result, _output} = PickleTestHelper.run()
     assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
   end
 end

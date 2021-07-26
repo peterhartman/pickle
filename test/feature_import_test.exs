@@ -17,7 +17,7 @@ defmodule Pickle.FeatureImportTest do
         end
       end
 
-      {result, _output} = PikleTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
 
@@ -68,7 +68,7 @@ defmodule Pickle.FeatureImportTest do
         end
       end
 
-      {result, _output} = PickleTestRunner.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
   end
@@ -87,7 +87,7 @@ defmodule Pickle.FeatureImportTest do
         end
       end
 
-      {result, _output} = PickleTestRunner.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
 
