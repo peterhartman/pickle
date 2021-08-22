@@ -5,7 +5,7 @@ volumes:
   deps: ~
 
 services:
-  cabbage:
+  pickle:
     image: elixir:1.4
     entrypoint: mix
     command: do local.hex --force, deps.get, deps.compile, test --only integration

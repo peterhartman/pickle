@@ -1,12 +1,12 @@
 Code.require_file("test_helper.exs", __DIR__)
 
-defmodule Cabbage.FeatureSetupTest do
+defmodule Pickle.FeatureSetupTest do
   use ExUnit.Case
 
   describe "Features can import steps from other features" do
     test "ignores wrong setup" do
       defmodule FeatureSetupTest do
-        use Cabbage.Feature, file: "simplest.feature"
+        use Pickle.Feature, file: "simplest.feature"
         @moduletag :another_module_tag
 
         tag @another_module_tag do
@@ -18,13 +18,13 @@ defmodule Cabbage.FeatureSetupTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
 
     test "uses correct setup" do
       defmodule FeatureSetupTest1 do
-        use Cabbage.Feature, file: "simplest.feature"
+        use Pickle.Feature, file: "simplest.feature"
         @moduletag :module_tag
 
         tag @module_tag do
@@ -36,7 +36,7 @@ defmodule Cabbage.FeatureSetupTest do
         end
       end
 
-      {result, _output} = CabbageTestHelper.run()
+      {result, _output} = PickleTestHelper.run()
       assert result == %{failures: 0, skipped: 0, total: 1, excluded: 0}
     end
   end

@@ -1,5 +1,10 @@
 # Changelog
 
+### v0.5.0
+
+- Change name to Pickle
+- Bump versions on external libraries
+
 ### v0.3.4-dev
 
 - Support for Elixir 1.7 #50.
