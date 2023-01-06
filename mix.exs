@@ -1,7 +1,7 @@
 defmodule Pickle.Mixfile do
   use Mix.Project
 
-  @version "0.5.2"
+  @version "0.5.3"
   def project do
     [
       app: :pickle,
@@ -45,7 +45,7 @@ defmodule Pickle.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:gherkin, "~> 1.6.0"},
+      {:gherkin, github: "cabbage-ex/gherkin"},
       {:ex_doc, "~> 0.25.0", only: :dev},
       {:earmark, "~> 1.4.15", only: :dev},
       {:excoveralls, "~> 0.14.2", only: :test}

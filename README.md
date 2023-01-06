@@ -157,4 +157,5 @@ $ docker-compose run --rm pickle test test/feature_test.exs
 - [x] Data tables
 - [x] Executing specific tests
 - [x] Tags implementation
-- [ ] Background steps
+- [x] Background steps
+- [x] Rules
