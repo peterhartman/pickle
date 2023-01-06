@@ -102,7 +102,7 @@ defmodule Pickle.FeatureExecutionTest do
                 %{number_1: number_1, doc_string: doc_string},
                 _state do
           complex_string = """
-          Here is provided some complex part that is way to complex
+          Here is provided some complex part that is way too complex
           """
 
           # TODO: Shouldn't it be casted to a integer?
